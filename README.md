@@ -1,6 +1,6 @@
-<H1> </a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/600px-New_Power_BI_Logo.svg.png?20210102182532" alt="Microsoft Power BI" width="30" height="30"> Customer Retention Analysis 
+<H1> </a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/600px-New_Power_BI_Logo.svg.png?20210102182532" alt="Microsoft Power BI" width="30" height="30">🌦 Real-Time Weather Analysis Dashboard
 
-## 🌦 Real-Time Weather Analysis Dashboard
+## Introduction
 <br>
 
 
