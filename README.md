@@ -57,7 +57,7 @@ Replace `YOUR_API_KEY` with your actual API key and `CITY_NAME` with the desired
 
 Data visualization for the datasets was done in Microsoft Power BI Desktop,
 
-![dashboard github](https://github.com/Aryan-chand/Customer-Retention-Analysis/blob/main/customer%20retention_pg1.png)
+![dashboard github](https://github.com/Aryan-chand/Weather_Analysis/blob/main/Dashboard.png)
 
 ### Key Performance Indicators and Metrics:
 
@@ -116,4 +116,4 @@ The measure used in visualization are:
 # :link: Shareable Link 
 You can interact and have fun with the dashboard here:
 
-[Microsoft PowerBI](https://app.powerbi.com/groups/me/reports/67c6a7b3-7a00-4474-8d5e-64b531ab0ae1/ReportSection515eb6e3c03bdcc7c490?experience=power-bi)
+[Microsoft PowerBI](https://app.powerbi.com/groups/me/reports/8c491070-32f2-4143-b9e5-be5c74fcd2d9/b0d457b52b655675229e?experience=power-bi)
