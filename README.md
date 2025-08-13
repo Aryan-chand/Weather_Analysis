@@ -1,172 +1,118 @@
-<H1> </a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/600px-New_Power_BI_Logo.svg.png?20210102182532" alt="Microsoft Power BI" width="30" height="30">🌦 Real-Time Weather Analysis Dashboard
+# 🌦 Real-Time Weather Analysis Dashboard
 
-## Introduction
-<br>
+# 📌 Introduction
+This project is an **interactive real-time weather dashboard** built using **Power BI**, fetching live weather data through an API. It provides **up-to-date weather insights** such as temperature, humidity, wind speed, UV index, air quality, and precipitation probability. The dashboard also includes **7-day weather forecasts**, **air pollution analysis**, and **sunrise/sunset timings** for multiple cities.
 
+**Key Highlights**
+- **Live Data Integration** – Weather information auto-updates from API in real-time.  
+- **Multi-City Comparison** – Easily switch between cities like Bangkok, Chiang Mai, and Nonthaburi.  
+- **Visual Forecasts** – 7-day temperature trends and rain probability charts.  
+- **Air Quality Monitoring** – Displays PM levels, NO₂, CO, SO₂, and O₃ values.  
+- **User-Friendly Interface** – Dark-themed, visually appealing, and mobile-friendly design.
 
-# Table of contents
-- [Problem Statement](https://github.com/Aryan-chand/Customer-Retention-Analysis?tab=readme-ov-file#problem-statement)
-- [Data Source](https://github.com/Aryan-chand/Customer-Retention-Analysis?tab=readme-ov-file#data-sourcing)
-- [Data Preparation](https://github.com/Aryan-chand/Customer-Retention-Analysis?tab=readme-ov-file#data-preparation)
-- [Data Visualization](https://github.com/Aryan-chand/Customer-Retention-Analysis?tab=readme-ov-file#data-visualization)
-- [Analysis and Insights](https://github.com/Aryan-chand/Customer-Retention-Analysis?tab=readme-ov-file#analysis-and-insights)
-- [Shareable Link](https://github.com/Aryan-chand/Customer-Retention-Analysis?tab=readme-ov-file#link-shareable-link)
+---
 
+## 🛠 Problem Statement
+Weather conditions have a direct impact on **daily life, travel, agriculture, public safety, and environmental health**.  
+However, most weather platforms provide **scattered, non-interactive, or delayed updates**, making it difficult for individuals and organizations to:
 
-# Problem Statement
+- Get **accurate real-time weather data** in one place.  
+- Monitor **air quality** for health and safety decisions.  
+- Track **temperature trends and rainfall probability** for planning outdoor activities or agricultural operations.  
+- Compare **multi-city weather** quickly for travel or logistics purposes.  
+- Anticipate weather-related **risks and disruptions** before they occur.
 
-- **Problem:** Churning customers using PhoneNow services were got in touch after they terminated the contract, and the Customer Retention manager wants to understand their customer profile and insights with a focus on retaining customers as well as approaching in advance who is at risk.
-- **Objectives:** The purpose of this analysis is to create a Customer Retention Dashboard in Power BI for the Customer Retention Manager that reflects all relevant Key Performance Indicators (KPIs) and metrics to:
-    - Self-exploratory the customer demographics and insights (churning & retaining).
-    - Actively approach who is at risk with the risk level of specific customer
-    - Contain many metrics and plots related to a single area of business for discussing with higher managers and generating further analysis.
-    - Allows for minimal interaction.
-    - Based on finding recommend improving customer retention.
+This lack of **consolidated, visual, and actionable weather insights** often leads to poor decision-making and increased risks in sectors like transportation, tourism, event planning, and public health.Our **Real-Time Weather Analysis Dashboard** aims to bridge this gap by providing an **interactive, data-rich, and continuously updated weather visualization tool** that empowers users to make **informed, timely decisions** based on reliable data.
+
+## 🎯 Objectives
+- Provide **real-time, accurate** weather updates from reliable API sources.  
+- Offer **multi-city comparisons** to help with travel and logistics planning.  
+- Visualize **7-day weather forecasts** for better preparedness.  
+- Display **air quality metrics** to raise environmental and health awareness.  
+- Create a **visually appealing, user-friendly** dashboard for easy interpretation of complex data.
+
+## 📊 Features
+- **Real-time data integration** using API.  
+- **Multi-location weather monitoring**.  
+- **Forecast visualization** (temperature trends & rain probability).  
+- **Air quality analysis** (PM10, PM2.5, NO₂, CO, SO₂, O₃).  
+- **Sunrise and sunset timings**.  
+- **Dark-mode modern UI** for better readability.
+
+---
+
 # Data Sourcing
 
-The Dataset used for this analysis was provided by :link:[Pwc Switzerland](https://cdn.theforage.com/vinternships/companyassets/4sLyCPgmsy8DA6Dh3/02%20Churn-Dataset.xlsx)
+The Dataset used for this analysis was taken from :link:[WeatherAPI](https://www.weatherapi.com/)
 
-# Data Preparation
+For current weather data use, Build the API URL:
+   ```bash
+   https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=CITY_NAME
+   ```
+Replace `YOUR_API_KEY` with your actual API key and `CITY_NAME` with the desired location.
 
-The dataset was loaded into Microsoft Power BI Desktop for modeling after transformation in Power Query.
-
-The tabulation below shows the metadata of `Churn` dataset:
-
-| File name | 02 Churn-Dataset  |
-| --- | --- |
-| Format | .xlsx |
-| Size | 772KB |
-| Fields | 23 |
-| Entities | 7043 |
-
-The tabulation below shows the `Churn` table with its field's names and their description:
-
-| Field Name | Description | Data Type |
-| --- | --- | --- |
-| customerID | Represents the unique number of the customer in the dataset | Text  |
-| gender | Describes the gender of the customer | Text |
-| SeniorCitizen | Describes if the customer is a senior citizen | Text |
-| Partner | Describes if the customer has a partner | Text |
-| Dependents | Describes if the customer has a dependent | Text |
-| tenure | Describes how long as a customer | Whole number |
-| PhoneService | Describes if the customer has registered a phone service | Text |
-| MultipleLines | Describes if the customer has registered multiple lines | Text |
-| InternetService | Describes if the customer has registered for Internet service | Text |
-| OnlineSecurity | Describes if the customer has registered for online security | Text |
-| OnlineBackup | Describes if the customer has registered for online backup | Text |
-| DeviceProtection | Describes if the customer has registered for device protection | Text |
-| TechSupport | Describes if the customer has registered for tech support | Text |
-| StreamingTV | Describes if the customer has registered to stream tv | Text |
-| StreamingMovies | Describes if the customer has registered to stream movies | Text |
-| Contract | Describes the length of the contract of the customer | Text |
-| PaperlessBilling | Describes if the customer has registered for paperless billing | Text |
-| PaymentMethod | Describes the payment method of the customer | Text |
-| MonthlyCharges | Represents the monthly charge incurred by the customer | Decimal number |
-| TotalCharges | Represents the total charge incurred by the customer | Decimal number |
-| numAdminTickets | Represents the number of admin tickets opened by the customer | Whole number |
-| numTechTickets | Represents the number of tech tickets opened by the customer | Whole number |
-| Churn | Describes if the customer is at risk of churn | Text |
-- **Relevant information about the** `Churn` **dataset:**
-    - Customers who left within the last month
-    - Services each customer has signed up for phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies
-    - Customer account information: how long as a customer, contract, payment method, paperless billing, monthly charges, total charges and number of tickets opened in the categories administrative and technical
-    - Demographic info about customers – gender, age range, and if they have partners and dependents
-
-### Data Cleaning
-
-Data Cleaning for the dataset was done in Power Query as follows:
-
-- Each of the columns in the table was validated to have the correct data type
-- There are 11 `N/A` values in `TotalCharges` column. Those missing values were filled with the `MonthlyCharges` value of each row because those customers are new and their tenure is just 1. `Table.AddColumn(#"Changed Type", "Custom", each if [TotalCharges] = null then [MonthlyCharges] else [TotalCharges])`
-
-### Data Transformation
-
-A new table named `Churn unpivot` was created by duplicating the `Churn dataset` table and unpivoting some columns to support a clear overview look. In the new table, I conducted transformation using M-formula, you can refer at below:
-
-- Attribute of demographic info: `Table.Unpivot(#"Replaced Value1", {"SeniorCitizen", "Partner", "Dependents"}, "Attribute", "Value")`
-- Attribute of services:
-    - `Table.ReplaceValue(#"Renamed Columns","No internet service","No",Replacer.ReplaceText,{"OnlineSecurity", "OnlineBackup", "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies"})`
-    - `Table.Unpivot(#"Reordered Columns", {"PhoneService", "MultipleLines", "Internet", "OnlineSecurity", "OnlineBackup", "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies"}, "Attribute", "Value.1")`
+---
 
 # Data Visualization
 
-Data visualization for the datasets was done in Microsoft Power BI Desktop, the dashboard includes 3 main dashboards and 5 tooltip pages
+Data visualization for the datasets was done in Microsoft Power BI Desktop,
 
 ![dashboard github](https://github.com/Aryan-chand/Customer-Retention-Analysis/blob/main/customer%20retention_pg1.png)
-![dashboard github](https://github.com/Aryan-chand/Customer-Retention-Analysis/blob/main/customer%20retention_pg2.png)
 
 ### Key Performance Indicators and Metrics:
-
-**About Customer Profile:**
-
-- Number of retained and churned customers
-- Retention & Churn Rate
-- Total Admin & Tech ticket
-- Total and monthly charge
-- Demographic, Account and Service info
-
-**About EDA Churn Profile:**
-
-- Churn by each service
-- Churn by tenure
-- Churn by Contract type
-- Total Admin & Tech tickets of churn customers
-
-**About Churn Predictive Model Comparison:**
-
-- Churn Predictive Model Evaluation
-- Most important model features
-- Risk level
-  
-### Measures
 
 The measure used in visualization are:
 
 - **Calculated measures**
-    - Rate of customer = `IF(ISFILTERED('Churn dataset'[Churn]),DIVIDE(CALCULATE(COUNT('Churn dataset'[Churn]), 'Churn dataset'[Churn] = SELECTEDVALUE('Churn dataset'[Churn])),CALCULATE(COUNT('Churn dataset'[customerID]),ALL('Churn dataset'[Churn])),0),DIVIDE(COUNT('Churn dataset'[customerID]),CALCULATE(COUNT('Churn dataset'[customerID]),ALL('Churn dataset'))))`
-    - %churn = `DIVIDE(CALCULATE(COUNT('Churn dataset'[Churn]), 'Churn dataset'[Churn] = "Yes"),CALCULATE(COUNT('Churn dataset'[Churn]), ALL('Churn dataset'[Churn])))`
-    - %male = `DIVIDE(CALCULATE(COUNTA('Churn dataset'[gender]),'Churn dataset'[gender] = "Male"),COUNTA('Churn dataset'[gender]))`
-    - %female = `DIVIDE(CALCULATE(COUNTA('Churn dataset'[gender]),'Churn dataset'[gender] = "Female"),COUNTA('Churn dataset'[gender]))`
-    - subcription = `SWITCH(TRUE(),'Churn unpivot'[tenure]<=12,"< 1 year",'Churn unpivot'[tenure]<=24,"< 2 years",'Churn unpivot'[tenure]<=36,"< 3 years",'Churn unpivot'[tenure]<=48,"< 4 years", 'Churn unpivot'[tenure]<=60,"< 5 years",'Churn unpivot'[tenure]<=72,"< 6 years")`
-    - #use admin ticket = `CALCULATE(COUNTA('Churn dataset'[numAdminTickets]),'Churn dataset'[numAdminTickets] > 0)`
-    - #use tech ticket = `CALCULATE(COUNTA('Churn dataset'[numTechTickets]),'Churn dataset'[numTechTickets] > 0)`
+    - For Current Temprature = `Curr_Temp_C = SUM('Current'[current.temp_c])&" °C"`
+    - For Forecast Temprature = `For_Temp_C = AVERAGE('Forecast_Day'[forecast.forecastday.day.avgtemp_c])&" °C"`
+    - For Current Humidity = `Humidity = SUM('Current'[current.humidity])&" %"`
+    - For Current Precipitation = `Precipitation = SUM('Current'[current.precip_mm])&" mm"`
+    - For Current Rain chance = `Rain_Chance = 100 - SUM(Forecast_Day[forecast.forecastday.day.daily_chance_of_rain])`
+    - For Current Visibility = `Vis = SUM('Current'[current.vis_km])&" Km"`
+    - For Current Wind Speed = `Wind_Speed = SUM('Current'[current.wind_kph])&" Kph"`
+    - Last Updated Date = `Last_Updated_Date_Curr = "Last Updated, "&FORMAT(FIRSTNONBLANK('Current'[current.last_updated],""),"dd mmm yyyy")`
+    
 - **Format measures**
-    - customer text = `SWITCH(
+    - AQI Color Indicators = `AQI Color TEMPLATE =
+        VAR AQI = ROUND(SELECTEDVALUE('Current'[current.air_quality.COLUMN_NAME]),0)
+        RETURN
+        SWITCH(
         TRUE(),
-        SELECTEDVALUE('Churn dataset'[Churn]) = "Yes", "Total Churn Customers",
-        SELECTEDVALUE('Churn dataset'[Churn]) = "No", "Total Retained Customers",
-         "Total Customers")`
-    - dashboard name =`SWITCH(
-        TRUE(),
-        SELECTEDVALUE('Churn dataset'[Churn]) = "Yes","Churn Dashboard",
-        SELECTEDVALUE('Churn dataset'[Churn]) = "No", "Retention Dashboard",
-         "Dashboard")`
-    - rate text =`SWITCH(
-        TRUE(),
-        SELECTEDVALUE('Churn dataset'[Churn]) = "Yes","Churn Rate",
-        SELECTEDVALUE('Churn dataset'[Churn]) = "No", "Retention Rate",
-         "Total Rate")`
-    - Welcome text = `VAR Hour = HOUR(NOW())
-    VAR Greeting = 
-    SWITCH(
-        TRUE(),
-        Hour >= 0 && Hour < 5, "Good Night",
-        Hour >= 5 && Hour < 12, "Good Morning",
-        Hour >= 12 && Hour < 18, "Good Afternoon",
-        Hour >= 18 && Hour < 24, "Good Evening"
-    )
-    RETURN
-    Greeting & " " & "Manager!"`
+        AQI <= 50, "#43d946",
+        AQI <= 100, "#fff570",
+        AQI <= 150, "#ff9800",
+        AQI <= 200, "#d99343",
+        AQI <= 300, "#ff5b0f",
+        "#d95243")`
 
-# Analysis and Insights
-The purpose of this dashboard is to serve as self-exploratory for managers, but I still note some highlighted points that I recognize below:
+---
 
-- Month-to-Month contracts, lack of online security and tech support, and issues with Fiber Optic service are some of the reasons for customer churn.
-- Only 16% of the customers are senior citizens, with almost double the churn rate compared to younger customers.
-- The customers have varying contract lengths, with a lot of them only staying for a month and some for up to 72 months.
-- Customers taking longer contracts tend to be more loyal and stay with the company for a longer period of time.
-- Customers are more likely to churn when the monthly charges are high, and there is a higher chance of churn when the total charges are lower.
-- 
+## ⚙️ Tools & Technologies Used
+- **Power BI** – Data visualization and dashboard creation  
+- **WeatherAPI.com** – Live weather data  
+- **JSON API Integration** – For fetching real-time weather and air quality information
+
+---
+
+## 🚀 How to Use
+1. Get your API key from **WeatherAPI.com**.  
+2. Replace `YOUR_API_KEY` in the API endpoint with your key.  
+3. In Power BI, use **Get Data → Web** and paste the endpoint to pull JSON.  
+4. Transform fields in **Power Query** (expand nested records, set data types).  
+5. Build visuals (cards, line charts, bar charts, gauges) as in the preview.  
+6. Configure **scheduled refresh** in Power BI Service (optional) for auto-updates.
+
+---
+
+## 📌 Future Improvements
+- Add **hourly forecasts** for more granular data.  
+- Integrate **severe weather alerts**.  
+- Enable a **mobile app version** for on-the-go access.  
+- Add **historical weather analysis** features.
+
+---
+
 # :link: Shareable Link 
 You can interact and have fun with the dashboard here:
 
