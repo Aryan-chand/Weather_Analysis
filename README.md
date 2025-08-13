@@ -1,7 +1,6 @@
 <H1> </a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/600px-New_Power_BI_Logo.svg.png?20210102182532" alt="Microsoft Power BI" width="30" height="30"> Customer Retention Analysis 
 
-## :clipboard: Introduction
-This project focuses on analyzing customer churn for PhoneNow services by understanding customer profiles, identifying risk levels, and recommending strategies to improve retention. The goal is to support the Customer Retention Manager through a Power BI dashboard that provides actionable insights with minimal interaction.
+## 🌦 Real-Time Weather Analysis Dashboard
 <br>
 
 
